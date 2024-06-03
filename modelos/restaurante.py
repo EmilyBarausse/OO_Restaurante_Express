@@ -31,13 +31,22 @@ nome_restaurante=restaurante_praca.nome
 print(f'Nome: {nome_restaurante}\n')
 
 # Questão 03) 
-print('Questão 03)')
+'''print('Questão 03)')
 estado_restaurante1=restaurante_praca.ativo
 estado_restaurante1==False
 if(estado_restaurante1==True):
     print(f'O restaurante {restaurante_praca.nome} encontra-se ativo\n')
 else:
     print(f'O restaurante {restaurante_praca.nome} encontra-se inativo \n')
+'''
+
+# Questão 03 | Corrigida
+print('Questão 03)')
+if restaurante_praca.ativo:
+    print('O restaurante está ativo')
+else:
+    print('O restaurante está inativo')
+print('')
 
 # Questão 04)
 print('Questão 04)')
@@ -45,9 +54,16 @@ categoria=Restaurante.categoria
 print(f'Categoria: {categoria}\n')
 
 # Questão 05)
-print('Questão 05)')
+'''print('Questão 05)')
 nome='Bistrô'
 print(f'Nome alterado para: {nome}\n')
+'''
+
+# Questão 05 | Corrigida
+print('Questão 05)')
+restaurante_praca.nome='Bistrô'
+print(restaurante_praca.nome)
+print('')
 
 # Questão 06)
 print('Questão 06)')
@@ -58,19 +74,26 @@ print(f'Categoria: {restaurante_pizza.categoria}\n')
 
 # Questão 07)
 print('Questão 07)')
-if(restaurante_pizza.categoria=='Fast Food'):
+if restaurante_pizza.categoria=='Fast Food':
     print(f'Sim, a categoria do restaurante {restaurante_pizza.nome} é: {restaurante_pizza.categoria}\n')
 else:
     print(f'Não, a categoria do restaurante {restaurante_pizza.nome} não é: {restaurante_pizza.categoria}\n')
 
 # Questão 08)
-print('Questão 08)')
+'''print('Questão 08)')
 estado_restaurante2=restaurante_pizza.ativo
 estado_restaurante2==False
-if(estado_restaurante2==False):
+if estado_restaurante2==False:
     print(f'O restaurante {restaurante_pizza.nome} encontra-se ativo\n')
 else:
     print(f'O restaurante {restaurante_pizza.nome} encontra-se inativo \n')
+'''
+
+# Questão 08 | Corrigida
+print('Questão 08)')
+restaurante_pizza.ativo=True
+print(restaurante_pizza.ativo)
+print('')
 
 # Questão 09)
 print('Questão 09)')
