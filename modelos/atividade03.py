@@ -1,93 +1,137 @@
-# Questão 01
-# print('Questão 01)')
-# class Pessoa:
-#     pessoas=[]
-
-#     def __init__(self,nome,profissao,idade=0):
-#         self.nome=nome
-#         self.idade=idade
-#         self.profissao=profissao
-
-#         Pessoa.pessoas.append(self)
-
+# #Exemplo:
+# print('Exemplo')
+# class Livro:
+#     def __init__(self, titulo, autor, paginas):
+#         self.titulo=titulo
+#         self.autor=autor
+#         self.paginas=paginas
 #     def __str__(self):
-#             return f'{self.nome} | {self.idade} | {self.profissao}'
-    
-#     def listar_pessoas():
-#         for pessoas in Pessoa.pessoas:
-#             print(f'Nome: {pessoas.nome} | Idade: {pessoas.idade} | Profissão: {pessoas.profissao}')
-            
-#     def aumentar_idade(self, valor):
-#         self.idade += valor
-        
+#         return f'{self.titulo} por {self.autor} - {self.paginas} páginas'
 
-# pessoa_1=Pessoa('Ronaldo','40','Operador de máquina') 
-# pessoa_1.aumentar_idade()
+#     @property
+#     def titulo_autor(self):
+#         return f'{self.titulo} por {self.autor}'
 
-# Pessoa.listar_pessoas()
+#     def aumentar_paginas(self,quantidade):
+#         self.paginas += quantidade
+
+# livro1=Livro('Tanto Faz','Jão',50)
+# print(livro1)
+
+# livro1.aumentar_paginas(90)
+# print(livro1)
 # print('')
 
 
 
+# # Questão 01
+# print('Questão 01)')
+# class Pessoa:
 
-# Questão 02, 03 e 04
-print('Questão 02 | 03 | 04)')
-class ContaBancaria:
-    conta_bancaria=[]
+#     def __init__(self,nome,idade,profissao):
+#         self.nome=nome
+#         self.idade=idade
+#         self.profissao=profissao
+
+#     def __str__(self):
+#             return f'{self.nome} | {self.idade} anos | {self.profissao}'
+
+#     def aniversario(self):
+#         self.idade += 1
     
-    #Q02
-    def __init__(self,titular,saldo):
-        self.titular=titular
-        self.saldo=saldo
-        self.ativo=False
+#     @property
+#     def saudacao(self):
+#         if self.profissao:
+#             print(f'Olá, sou {self.nome}! Trabalho como {self.profissao}.') 
+#         else:
+#             print(f'Olá, sou {self.nome}!') 
+
+# pessoa_1=Pessoa('Ronaldo',40,'Operador de máquina') 
+# print(pessoa_1)
+# pessoa_1.aniversario()
+# print(pessoa_1)
+# print('')
+# pessoa_1.saudacao
+# print('')
+
+
+# # Questão 02, 03 e 04
+# print('Questão 02 | 03 | 04)')
+# class ContaBancaria:
+    
+#     #Q02
+#     def __init__(self,titular,saldo):
+#         self.titular=titular
+#         self.saldo=saldo
+#         self._ativo=False #atributo protegido
         
-        ContaBancaria.conta_bancaria.append(self)
+#     #Q03
+#     def __str__(self):
+#         return f'Titular da conta bancária: {self.titular} | Saldo disponível: R$ {self.saldo}'
+
+# # conta1=ContaBancaria('Arina da Piedade', 3,58)
+
+# # conta2=ContaBancaria('Rosicléa da Aparecida', 1256,27)
+    
+# # print(conta1)
+# # print('')
+# # print(conta2)
+# # print('')
+
+#     #Q04     
+#     @classmethod   
+#     def ativar_conta(cls,conta):
+#         conta._ativo= True
         
-    #Q03
-    def __str__(self):
-        return f'{self.titular} | {self.saldo}'
-    
-    def listar_conta_bancaria():
-        for conta_bancaria in ContaBancaria.conta_bancaria:
-            print(f'Titular da conta bancária: {conta_bancaria.titular}. Saldo disponível: {conta_bancaria.saldo}. Status ativação: {conta_bancaria.ativo}')
-    
-    #Q04        
-    def ativar_conta(self):
-        self.ativo= not self.ativo
+# conta3=ContaBancaria('José', 10,00)
+# print(f'Antes de ativar: Conta ativa? {conta3._ativo}')
+# ContaBancaria.ativar_conta(conta3)
+# print(f'Depois de ativar: Conta ativa? {conta3._ativo}')
             
-conta_bancaria_1=ContaBancaria('Arina da Piedade','R$ 3,58')
-conta_bancaria_1.ativar_conta()
 
-conta_bancaria_2=ContaBancaria('Rosicléa da Aparecida','R$ 1256,27')
-conta_bancaria_2.ativar_conta()
+# # Questão 05 
+# class ContaBancariaPythonica:
+#     def __init__(self,titular,saldo):
+#         self._titular=titular
+#         self._saldo=saldo
+#         self._ativo=False
+        
+#     @property
+#     def titular(self):
+#         return self._titular
+    
+#     @property
+#     def saldo(self):
+#         return self._saldo
+    
+#     @property
+#     def ativo(self):
+#         return self._ativo
 
-ContaBancaria.listar_conta_bancaria()
-print('')
-
-
-# Questão 05 ???????????????????????????????????????????????????????????
-
-
-# Questão 06 ???????????????????????????????????????????????????????????
-
+# # Questão 06 
+# conta4=ContaBancariaPythonica('Josefino',1500,2)
+# print(f'Titular da conta 4 é: {conta4.titular}')
 
 # Questão 07
-print('Questão 07')
+# print('Questão 07')
 class ClienteBanco:
     
-    def __init__(self,nomeCliente,idadeCliente,cpfCliente,telefoneCliente,cidadeCliente):
-        self.nomeCliente=nomeCliente
-        self.idadeCliente=idadeCliente
-        self.cpfCliente=cpfCliente
-        self.telefoneCliente=telefoneCliente
-        self.cidadeCliente=cidadeCliente
+    def __init__(self,nome,idade,cpf,telefone,cidade):
+        self.nome=nome
+        self.idade=idade
+        self.cpf=cpf
+        self.telefone=telefone
+        self.cidade=cidade
         
+# cliente1=ClienteBanco('João Moreira', '55 anos', '089.487.264-14', '(41) 99487-6538', 'Campo Largo')
+# cliente2=ClienteBanco('Eliane Quirino', '47 anos', '099.325.584-27', '(41) 99981-0568', 'Balsa Nova')
+# cliente3=ClienteBanco('Maria Silva', '32 anos', '095.789.123-45', '(41) 98826-1414', 'Curitiba')
+
+# Questão 08
     @classmethod
-    def listar_clientes():
-        print(f'{'Nome'.ljust(30)} | {'Idade'.ljust(30)} | {'CPF'.ljust(30)}')
-        for restaurante in cls.restaurantes:
-            print(f'{restaurante._nome.ljust(20)} | {restaurante._categoria.ljust(20)} | {restaurante.ativo}')
-        
-cliente1=ClienteBanco('João Moreira', '55 anos', '089.487.264-14', '(41) 99487-6538', 'Campo Largo')
-cliente2=ClienteBanco('Eliane Quirino', '47 anos', '099.325.584-27', '(41) 99981-0568', 'Balsa Nova')
-cliente3=ClienteBanco('Maria Silva', '32 anos', '095.789.123-45', '(41) 98826-1414', 'Curitiba')
+    def criar_conta(cls, titular, saldo_inicial):
+        conta=ClienteBanco(titular,saldo_inicial)
+        return conta
+    
+conta_cliente1=ClienteBanco.criar_conta('Tertulia',9999.99)
+print(f'Conta de {conta_cliente1.titular} com saldo de R$ {conta_cliente1.saldo_inicial}')
